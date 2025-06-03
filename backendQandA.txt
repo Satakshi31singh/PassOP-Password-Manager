@@ -1,0 +1,163 @@
+1-What is the purpose of your password manager application?
+It securely stores and manages user credentials, ensuring data encryption and safe retrieval.
+
+2-How did you structure your backend architecture?
+I used a RESTful API architecture with endpoints for CRUD operations, connected to MongoDB for data storage.
+
+3-How do you ensure the security of stored passwords?
+Passwords are encrypted using hashing algorithms like bcrypt before storing them in the database.
+
+4-What tools did you use for testing your API?
+I used Postman to test API endpoints for functionality, error handling, and performance.
+
+
+MongoDB-Specific Questions:
+
+1-Why did you choose MongoDB for this project?
+MongoDB's schema flexibility and JSON-like document structure make it ideal for storing user data and credentials.
+
+2-How do you structure your MongoDB collections for this application?
+I have collections like users for user details and passwords for storing encrypted credentials.
+
+3-How do you ensure data consistency in MongoDB?
+I use validation rules in the schema and implement transactions for critical operations.
+
+4-What is the purpose of your password manager application?
+It securely stores and manages user credentials, ensuring data encryption and safe retrieval.
+
+5-How did you structure your backend architecture?
+I used a RESTful API architecture with endpoints for CRUD operations, connected to MongoDB for data storage.
+
+6-How do you ensure the security of stored passwords?
+Passwords are encrypted using hashing algorithms like bcrypt before storing them in the database.
+
+7-What tools did you use for testing your API?
+I used Postman to test API endpoints for functionality, error handling, and performance.
+
+
+MongoDB-Specific Questions:
+
+1-Why did you choose MongoDB for this project?
+MongoDB's schema flexibility and JSON-like document structure make it ideal for storing user data and credentials.
+
+2-How do you structure your MongoDB collections for this application?
+I have collections like users for user details and passwords for storing encrypted credentials.
+
+3-How do you ensure data consistency in MongoDB?
+I use validation rules in the schema and implement transactions for critical operations.
+
+4-How do you query a user's stored passwords in MongoDB?
+  db.passwords.find({ userId: "user123" });
+  This query retrieves all passwords associated with a specific user ID.
+
+5-How do you handle large datasets in MongoDB?
+I use indexing for faster queries and pagination for efficient data retrieval.
+
+
+Backend and Security Questions:
+
+1-How do you authenticate users in your application?
+I use JWT (JSON Web Tokens) for secure user authentication and session management.
+
+2-How do you handle sensitive data in transit?
+I use HTTPS for secure communication and encrypt sensitive data before sending it.
+
+3-What measures do you take to prevent SQL/NoSQL injection?
+I use parameterized queries and sanitize user inputs to prevent injection attacks.
+
+4-How do you implement role-based access control (RBAC)?
+I assign roles to users and validate their permissions before granting access to specific endpoints.
+
+
+API and Performance Questions:
+
+1-How do you handle API rate limiting?
+I use middleware like express-rate-limit to restrict the number of requests per user.
+
+2-How do you optimize MongoDB queries for performance?
+I use indexing, aggregation pipelines, and avoid unnecessary queries to improve performance.
+
+3-How do you handle errors in your API?
+I use centralized error-handling middleware in Express to catch and respond with appropriate HTTP status codes.
+
+4-How do you implement pagination in your API?
+db.passwords.find({ userId: "user123" }).skip(10).limit(10);
+This query retrieves a specific range of results for pagination.
+
+
+Deployment and Scalability Questions:
+
+1-How would you scale your application?
+I would use horizontal scaling with load balancers and implement database sharding in MongoDB.
+
+2-How do you deploy your application?
+I deploy it using platforms like AWS or Heroku, with Docker for containerization.
+
+3-How do you monitor your application's performance?
+I use tools like MongoDB Atlas monitoring and application performance monitoring (APM) tools like New Relic.
+
+
+Miscellaneous:
+
+1-What challenges did you face while building this project?
+Managing secure password storage and optimizing database queries were the main challenges.
+
+2-How do you handle database migrations or schema changes in MongoDB?
+I use versioning and scripts to migrate data and update schemas without downtime.
+
+3-What is the difference between find() and aggregate() in MongoDB?
+find() retrieves documents based on a query, while aggregate() performs advanced data processing using pipelines.
+
+4-How do you back up your MongoDB database?
+I use MongoDB's mongodump and mongorestore tools for backups and restoration.
+
+5-How do you ensure your application is fault-tolerant?
+I implement retry mechanisms, use replica sets in MongoDB, and handle exceptions gracefully.
+
+
+SERVER.JS file question and assign
+
+1. What is the purpose of the express module in your project?
+Express is a Node.js web framework that simplifies building REST APIs by providing routing and middleware support.
+
+2. Why do you use body-parser middleware?
+body-parser parses incoming request bodies in JSON format, making it easy to access data sent from the client in req.body.
+
+3. What is the role of cors in your application?
+cors enables Cross-Origin Resource Sharing, allowing your API to be accessed from different domains, which is essential for frontend-backend communication.
+
+4. How do you connect to MongoDB in this file?
+I use the MongoClient from the mongodb package, connecting with a URI from environment variables for security and flexibility.
+
+5. How do you handle environment variables in your project?
+I use the dotenv package to load sensitive configuration like database URIs and names from a .env file, keeping them out of the codebase.
+
+6. What does the app.get('/') endpoint do?
+It retrieves all documents from the passwords collection in MongoDB and returns them as a JSON array to the client.
+
+7. How does the app.post('/') endpoint work?
+It accepts a password object in the request body and inserts it into the passwords collection, returning the result of the operation.
+
+8. How is the app.delete('/') endpoint implemented?
+It deletes a password document matching the request body from the passwords collection and returns the result.
+
+9. How do you start the server, and on which port does it run?
+The server starts with app.listen(port) and listens on port 3000, as defined in the code.
+
+10. How do you ensure your API can be tested with tools like Postman?
+By using standard HTTP methods (GET, POST, DELETE) and JSON payloads, the API is easily testable with Postman.
+
+11. What are some improvements you could make to this backend?
+I could add authentication, input validation, error handling, and encrypt passwords before storing them for better security.
+
+12. How would you handle errors in your current endpoints?
+I would use try-catch blocks in each async route and send appropriate error responses to the client.
+
+13. Why is it important to use environment variables for database credentials?
+It keeps sensitive information secure and allows easy configuration changes without modifying the code.
+
+14. How does MongoDB store data in this application?
+Data is stored as documents in the passwords collection, with each document representing a password entry.
+
+15. How would you delete a password by its unique ID?
+I would use deleteOne({ _id: ObjectId(id) }) to target the document by its MongoDB ObjectId.
